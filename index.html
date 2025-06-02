@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personal Finance Planner</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">💸 FinancePlanner</div>
+    <ul>
+      <li><a href="index.html">Dashboard</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><button id="logoutBtn" style="background:none;border:none;color:white;cursor:pointer;">Logout</button></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <header>
+      <h1>Track Your Finances</h1>
+      <p>Monitor your income, expenses, and goals in real-time</p>
+    </header>
+
+    <section class="form-section">
+      <form id="transaction-form">
+        <select id="type" required>
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+
+        <!-- category input hidden by default -->
+        <input type="text" id="category" placeholder="Category (e.g., Food, Rent)" required />
+
+        <input type="number" id="amount" placeholder="Amount" required min="0" step="0.01" />
+        <input type="date" id="date" required />
+
+        <label><input type="checkbox" id="recurring" /> Recurring</label>
+        <button type="submit">Add Transaction</button>
+      </form>
+    </section>
+
+    <section class="budget-limit">
+      <h3>Set Budget Limit</h3>
+      <input type="number" id="budget-limit" placeholder="Monthly limit (₹)" />
+      <button onclick="setBudgetLimit()">Set Limit</button>
+      <p id="alert-msg"></p>
+    </section>
+
+    <section class="summary">
+      <h2>Summary</h2>
+      <div class="cards">
+        <div class="card income">Income: ₹<span id="total-income">0</span></div>
+        <div class="card expense">Expense: ₹<span id="total-expense">0</span></div>
+        <div class="card balance">Balance: ₹<span id="balance">0</span></div>
+      </div>
+    </section>
+
+    <section class="charts">
+      <h2>Spending Breakdown</h2>
+      <div class="charts-wrapper">
+        <canvas id="pieChart" class="chart"></canvas>
+        <canvas id="barChart" class="chart"></canvas>
+      </div>
+    </section>
+
+    <section class="transactions">
+      <h2>Transactions</h2>
+      <button onclick="downloadCSV()">📤 Export to CSV</button>
+      <div id="transaction-list"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

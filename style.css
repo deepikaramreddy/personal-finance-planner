@@ -1,0 +1,231 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #eef2f7;
+  margin: 0; padding: 0;
+  color: #2c3e50;
+}
+
+.navbar {
+  background: #34495e;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navbar a, .navbar button {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar a:hover, .navbar button:hover {
+  color: #f39c12;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.2rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.form-section form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 2rem;
+}
+
+form select, form input, form button {
+  flex: 1 1 150px;
+  padding: 12px 15px;
+  border: 1px solid #bdc3c7;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+form select:focus, form input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+form button {
+  flex: 0 0 150px;
+  background-color: #3498db;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 6px;
+}
+
+form button:hover {
+  background-color: #2980b9;
+}
+
+.cards {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  flex: 1;
+  padding: 1.2rem 1.5rem;
+  background: #ecf0f1;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-left: 8px solid;
+}
+
+.income { border-color: #27ae60; color: #27ae60; }
+.expense { border-color: #c0392b; color: #c0392b; }
+.balance { border-color: #2980b9; color: #2980b9; }
+
+.charts-wrapper {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.chart {
+  max-width: 300px;
+  max-height: 300px;
+  flex: 1;
+}
+
+.transactions h2 {
+  margin-bottom: 1rem;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-bottom: 1px solid #dcdde1;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease;
+}
+
+.transaction-item.income {
+  color: #27ae60;
+}
+
+.transaction-item.expense {
+  color: #c0392b;
+}
+
+.transaction-item:hover {
+  background-color: #f1f2f6;
+}
+
+#alert-msg {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.budget-limit input, .budget-limit button {
+  padding: 10px;
+  margin-top: 8px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #bdc3c7;
+}
+
+.budget-limit button {
+  background-color: #f39c12;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.budget-limit button:hover {
+  background-color: #d35400;
+}
+.auth-container {
+  max-width: 400px;
+  margin: 6rem auto;
+  background: white;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 12px 0;
+  border: 1px solid #bdc3c7;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3498db;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.auth-container button:hover {
+  background-color: #2980b9;
+}
+
+.auth-container p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.auth-container a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}

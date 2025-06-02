@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up - FinancePlanner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required minlength="6" />
+      <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+    <p id="signup-msg" style="color:red;"></p>
+  </div>
+
+  <script>
+    const form = document.getElementById('signupForm');
+    const msg = document.getElementById('signup-msg');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const email = form.email.value.toLowerCase();
+      const password = form.password.value;
+
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+
+      if(users.some(u => u.email === email)) {
+        msg.textContent = "User already exists.";
+        return;
+      }
+
+      users.push({ email, password, transactions: [] });
+      localStorage.setItem('users', JSON.stringify(users));
+      localStorage.setItem('loggedInUser', email);
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>
